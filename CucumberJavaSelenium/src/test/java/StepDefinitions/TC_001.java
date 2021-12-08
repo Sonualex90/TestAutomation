@@ -55,17 +55,25 @@ public class TC_001 {
 	 	    } 
 	}
 
-	@Then("navigate to Ergo.com home page")
-	public void navigate_to_ergo_com_home_page() {
+//	@Then("navigate to Ergo.com home page")
+//	public void navigate_to_ergo_com_home_page() {
+//	   
+//	}
+//	
+	@Then("navigate to Ergo.com home page and validate")
+	public void navigate_to_ergo_com_home_page_and_validate() {
 	    // Write code here that turns the phrase above into concrete actions
+		 // Write code here that turns the phrase above into concrete actions
 	    System.out.println("Inside Step-Navigate to Home page");
 	   String pageTitle= driver.getTitle();
 	   System.out.println(pageTitle);
-	   if(pageTitle.equalsIgnoreCase("Willkommen bei ERGO | ERGO Group AG")) {
+	   if(pageTitle.equalsIgnoreCase("Willkommen bei ERGO | ERGO Group AG")||
+			   pageTitle.equalsIgnoreCase("ERGO Group Homepage | ERGO Group AG")) {
 		   System.out.println("Successfully navigate to Ergo.de page");
 	   }
 	   driver.close();
 	   driver.quit();
+	   // throw new io.cucumber.java.PendingException();
 	}
 
 }
